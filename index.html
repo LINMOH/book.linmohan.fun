@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林墨瀚の个人主页</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <style>
+        /* 保持原有样式不变，新增以下PDF查看器样式 */
+        
+        .pdf-viewer-container {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        body.dark-mode .pdf-viewer-container {
+            background: rgba(46, 58, 71, 0.8);
+        }
+
+        #pdf-canvas {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pdf-controls {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pdf-controls button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            background: rgba(0, 123, 255, 0.9);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pdf-controls button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        #pdf-select {
+            padding: 0.5rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-mode #pdf-select {
+            background: rgba(46, 58, 71, 0.9);
+            color: #c3cfe2;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <!-- 原有样式保持不变 -->
+</head>
+
+<body>
+    <!-- 保持原有页面结构不变 -->
+
+    <!-- 在原有内容之后添加PDF查看器 -->
+    <div class="pdf-viewer-container">
+        <canvas id="pdf-canvas"></canvas>
+        <div class="pdf-controls">
+            <button onclick="changePage(-1)">上一页</button>
+            <button onclick="changePage(1)">下一页</button>
+            <select id="pdf-select" onchange="loadSelectedPDF(this.value)">
+                <option value="1.pdf">文档1</option>
+                <option value="2.pdf">文档2</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- 原有脚本保持不变 -->
+
+    <script>
+        // PDF查看器功能
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 
+            'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
+
+        let currentPDF = null;
+        let currentPage = 1;
+        let totalPages = 1;
+        let scale = 1.5;
+
+        async function loadPDF(filename) {
+            try {
+                const loadingTask = pdfjsLib.getDocument(`pdf/${filename}`);
+                currentPDF = await loadingTask.promise;
+                totalPages = currentPDF.numPages;
+                currentPage = 1;
+                await renderPage();
+            } catch (err) {
+                console.error('PDF加载失败:', err);
+            }
+        }
+
+        async function renderPage() {
+            const page = await currentPDF.getPage(currentPage);
+            const canvas = document.getElementById('pdf-canvas');
+            const context = canvas.getContext('2d');
+            
+            const viewport = page.getViewport({ scale });
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+
+            await page.render({
+                canvasContext: context,
+                viewport
+            }).promise;
+        }
+
+        function changePage(delta) {
+            const newPage = currentPage + delta;
+            if (newPage > 0 && newPage <= totalPages) {
+                currentPage = newPage;
+                renderPage();
+            }
+        }
+
+        function loadSelectedPDF(filename) {
+            loadPDF(filename);
+        }
+
+        // 初始化加载第一个PDF
+        window.addEventListener('load', () => {
+            loadPDF('1.pdf');
+        });
+
+        // 窗口大小变化时调整PDF显示
+        window.addEventListener('resize', () => {
+            if (currentPDF) renderPage();
+        });
+    </script>
+</body>
+</html>
