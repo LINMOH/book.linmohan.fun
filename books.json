@@ -1,0 +1,7 @@
+// 在books数组中添加新对象
+{
+  "id": 1,
+  "title": "线性代数应该这样学",
+  "cover": "https://s1.imagehub.cc/images/2025/04/03/545e36d16a7aee2305dd4a665492f6d2.jpg", // 封面图片路径
+  "pdf": "pdfs/1.pdf" // PDF文件路径
+}
