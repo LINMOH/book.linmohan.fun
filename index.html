@@ -3,148 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>林墨瀚の个人主页</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <title>电子书库</title>
     <style>
-        /* 保持原有样式不变，新增以下PDF查看器样式 */
-        
-        .pdf-viewer-container {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 2rem;
-            width: 90%;
-            max-width: 800px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            margin: 2rem 0;
-            position: relative;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
-        body.dark-mode .pdf-viewer-container {
-            background: rgba(46, 58, 71, 0.8);
+        body {
+            background: #f5f5f5;
+            padding: 20px;
         }
 
-        #pdf-canvas {
-            width: 100%;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .book-item {
+            background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .pdf-controls {
-            margin-top: 1rem;
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .pdf-controls button {
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 8px;
-            background: rgba(0, 123, 255, 0.9);
-            color: white;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
             cursor: pointer;
-            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #333;
         }
 
-        .pdf-controls button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        .book-item:hover {
+            transform: translateY(-5px);
         }
 
-        #pdf-select {
-            padding: 0.5rem;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(0, 0, 0, 0.1);
+        .book-cover {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            background: #eee;
         }
 
-        body.dark-mode #pdf-select {
-            background: rgba(46, 58, 71, 0.9);
-            color: #c3cfe2;
-            border-color: rgba(255, 255, 255, 0.2);
+        .book-title {
+            font-size: 14px;
+            text-align: center;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .book-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .book-cover {
+                height: 150px;
+            }
+
+            .book-title {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .book-grid {
+                gap: 10px;
+            }
+
+            .book-item {
+                padding: 10px;
+            }
         }
     </style>
-    <!-- 原有样式保持不变 -->
 </head>
-
 <body>
-    <!-- 保持原有页面结构不变 -->
-
-    <!-- 在原有内容之后添加PDF查看器 -->
-    <div class="pdf-viewer-container">
-        <canvas id="pdf-canvas"></canvas>
-        <div class="pdf-controls">
-            <button onclick="changePage(-1)">上一页</button>
-            <button onclick="changePage(1)">下一页</button>
-            <select id="pdf-select" onchange="loadSelectedPDF(this.value)">
-                <option value="1.pdf">文档1</option>
-                <option value="2.pdf">文档2</option>
-            </select>
-        </div>
+    <div class="container">
+        <div class="book-grid" id="bookContainer"></div>
     </div>
 
-    <!-- 原有脚本保持不变 -->
-
     <script>
-        // PDF查看器功能
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 
-            'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
+        // 书籍数据存储
+        const books = [
+            {
+                "id": 1,
+                "title": "JavaScript权威指南",
+                "cover": "covers/js-book.jpg",
+                "pdf": "pdfs/js-guide.pdf"
+            },
+            {
+                "id": 2,
+                "title": "Python编程入门",
+                "cover": "covers/python-book.jpg",
+                "pdf": "pdfs/python-intro.pdf"
+            },
+            // 添加更多书籍...
+        ];
 
-        let currentPDF = null;
-        let currentPage = 1;
-        let totalPages = 1;
-        let scale = 1.5;
-
-        async function loadPDF(filename) {
-            try {
-                const loadingTask = pdfjsLib.getDocument(`pdf/${filename}`);
-                currentPDF = await loadingTask.promise;
-                totalPages = currentPDF.numPages;
-                currentPage = 1;
-                await renderPage();
-            } catch (err) {
-                console.error('PDF加载失败:', err);
-            }
+        // 动态生成书籍列表
+        function renderBooks() {
+            const container = document.getElementById('bookContainer');
+            container.innerHTML = books.map(book => `
+                <a href="${book.pdf}" class="book-item" target="_blank">
+                    <img src="${book.cover}" alt="${book.title}" class="book-cover"
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlZWVlZWUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzk5OSI+Tm8gQ292ZXI8L3RleHQ+PC9zdmc+'">
+                    <div class="book-title">${book.title}</div>
+                </a>
+            `).join('');
         }
 
-        async function renderPage() {
-            const page = await currentPDF.getPage(currentPage);
-            const canvas = document.getElementById('pdf-canvas');
-            const context = canvas.getContext('2d');
-            
-            const viewport = page.getViewport({ scale });
-            canvas.height = viewport.height;
-            canvas.width = viewport.width;
-
-            await page.render({
-                canvasContext: context,
-                viewport
-            }).promise;
-        }
-
-        function changePage(delta) {
-            const newPage = currentPage + delta;
-            if (newPage > 0 && newPage <= totalPages) {
-                currentPage = newPage;
-                renderPage();
-            }
-        }
-
-        function loadSelectedPDF(filename) {
-            loadPDF(filename);
-        }
-
-        // 初始化加载第一个PDF
-        window.addEventListener('load', () => {
-            loadPDF('1.pdf');
-        });
-
-        // 窗口大小变化时调整PDF显示
-        window.addEventListener('resize', () => {
-            if (currentPDF) renderPage();
-        });
+        // 初始化
+        window.addEventListener('DOMContentLoaded', renderBooks);
     </script>
 </body>
 </html>
