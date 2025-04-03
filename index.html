@@ -98,7 +98,22 @@
     </div>
 
     <script>
-
+        // 书籍数据存储
+        const books = [
+            {
+                "id": 1,
+                "title": "线性代数应该这样学",
+                "cover": "https://s1.imagehub.cc/images/2025/04/03/545e36d16a7aee2305dd4a665492f6d2.jpg", 
+                "pdf": "pdfs/1.pdf" 
+            },
+            {
+                "id": 2,
+                "title": "Python编程入门",
+                "cover": "covers/python-book.jpg",
+                "pdf": "pdfs/python-intro.pdf"
+            },
+            // 添加更多书籍...
+        ];
 
         // 动态生成书籍列表
         function renderBooks() {
