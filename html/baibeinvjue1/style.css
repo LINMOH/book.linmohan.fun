@@ -313,7 +313,7 @@ body {
 @media screen and (max-width: 480px) {
     :root {
         --content-max-width: 100%;
-        --content-padding: 16px;
+        --content-padding: 8px;
         --border-radius: 6px;
     }
     
@@ -326,7 +326,7 @@ body {
     .calibre {
         font-size: 1em;
         line-height: 1.6;
-        padding: 16px;
+        padding: 8px;
     }
     
     .calibre3 {
@@ -344,48 +344,48 @@ body {
     }
     
     .entry {
-        padding: 1em 1.2em;
-        margin: 1.2em 0;
+        padding: 0.8em 1em;
+        margin: 1em 0;
         font-size: 0.95em;
     }
     
     .credits {
         font-size: 1.2em;
-        padding: 1.2em 1em;
-        margin: 2em 0;
+        padding: 1em 0.8em;
+        margin: 1.5em 0;
     }
     
     .credits1 {
         font-size: 1em;
-        padding: 0.8em 1em;
+        padding: 0.6em 0.8em;
     }
     
     .cover {
-        padding: 1.5em 1em;
-        margin-bottom: 2em;
+        padding: 1.2em 0.8em;
+        margin-bottom: 1.5em;
     }
     
     .calibre9 {
-        padding-left: 1.5em;
-        margin: 1.5em 0;
+        padding-left: 1.2em;
+        margin: 1.2em 0;
     }
     
     .calibre10 {
-        margin: 0.8em 0;
-        padding-left: 0.3em;
+        margin: 0.6em 0;
+        padding-left: 0.2em;
     }
     
     .illust {
-        margin: 2em 0;
-    }
-    
-    .illust1 {
         margin: 1.5em 0;
     }
     
+    .illust1 {
+        margin: 1.2em 0;
+    }
+    
     .scenebreak {
-        margin: 2em 0;
-        padding: 1.5em 0;
+        margin: 1.5em 0;
+        padding: 1.2em 0;
         font-size: 1.1em;
     }
     
@@ -397,7 +397,7 @@ body {
     
     .calibre4 {
         width: 90%;
-        margin: 1.5em auto;
+        margin: 1.2em auto;
     }
     
     /* 触摸友好的按钮和链接 */
@@ -418,7 +418,7 @@ body {
     .calibre1 {
         max-width: 100%;
         height: auto;
-        margin: 1em 0;
+        margin: 0.8em 0;
     }
 }
 
@@ -426,12 +426,12 @@ body {
 @media screen and (min-width: 481px) and (max-width: 767px) {
     :root {
         --content-max-width: 100%;
-        --content-padding: 24px;
+        --content-padding: 16px;
     }
     
     .calibre {
         font-size: 1.05em;
-        padding: 24px;
+        padding: 16px;
     }
     
     .calibre3 {
@@ -447,17 +447,17 @@ body {
     }
     
     .entry {
-        padding: 1.3em 1.8em;
-        margin: 1.8em 0;
+        padding: 1.1em 1.5em;
+        margin: 1.5em 0;
     }
     
     .credits {
         font-size: 1.5em;
-        padding: 1.8em 1.5em;
+        padding: 1.5em 1.2em;
     }
     
     .cover {
-        padding: 2.5em 1.5em;
+        padding: 2em 1.2em;
     }
     
     .calibre9 {
@@ -558,31 +558,31 @@ body {
 /* 横屏手机优化 */
 @media screen and (max-width: 767px) and (orientation: landscape) {
     .calibre {
-        padding: 12px 20px;
+        padding: 8px 12px;
     }
     
     .calibre3 {
         font-size: 1.4em;
-        margin: 1em 0 0.8em 0;
+        margin: 0.8em 0 0.6em 0;
     }
     
     .calibre5 {
-        margin: 1em 0;
+        margin: 0.8em 0;
         line-height: 1.55;
     }
     
     .entry {
-        padding: 0.8em 1.2em;
-        margin: 1.2em 0;
+        padding: 0.6em 1em;
+        margin: 1em 0;
     }
     
     .cover {
-        padding: 1.2em 1em;
+        padding: 1em 0.8em;
     }
     
     .scenebreak {
-        margin: 1.8em 0;
-        padding: 1.2em 0;
+        margin: 1.5em 0;
+        padding: 1em 0;
     }
 }
 @media (prefers-color-scheme: dark) {
