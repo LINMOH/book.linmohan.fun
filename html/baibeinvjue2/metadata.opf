@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">e7ec7bcf-dab0-44b7-896b-759b7c22847e</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e7ec7bcf-dab0-44b7-896b-759b7c22847e</dc:identifier>
+        <dc:title>败北女角太多了！ 第二卷</dc:title>
+        <dc:creator opf:file-as="雨森たきび &amp; いみぎむる" opf:role="aut">雨森たきび</dc:creator>
+        <dc:creator opf:file-as="雨森たきび &amp; いみぎむる" opf:role="aut">いみぎむる</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (8.6.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>时至暑假后半。我和八奈见在咖啡厅闲聊时，偶然间目睹了惊人的情景。烧盐与她的心上人绫野两个人一同出游。随后，我们又撞见了绫野的女友──「胜利女角」朝云千早正偷偷地跟踪两人。「我怀疑光希同学与烧盐同学出轨了。」惊人发展接踵而来，我们就这么被卷入其中，和朝云一同探寻真相。虽然我觉得就烧盐的个性来看实在不可能。不过，她与绫野两人独处时，那张藏不住心意的脸庞──人气瞬间沸腾的确定败北恋爱喜剧，众所盼望的第 2 集！</dc:description>
+        <dc:publisher>小学馆</dc:publisher>
+        <dc:language>zh</dc:language>
+        <dc:subject>校园</dc:subject>
+        <dc:subject>欢乐向</dc:subject>
+        <dc:subject>青春</dc:subject>
+        <dc:subject>恋爱</dc:subject>
+        <dc:subject>后宫</dc:subject>
+        <dc:subject>妹妹</dc:subject>
+    </metadata>
+    <guide>
+        <reference type="cover" title="封面" href="cover.jpg"/>
+    </guide>
+</package>

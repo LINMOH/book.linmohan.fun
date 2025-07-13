@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">b4514968-a64b-4c4d-bfdd-8d9f20b7ac55</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">b4514968-a64b-4c4d-bfdd-8d9f20b7ac55</dc:identifier>
+        <dc:title>败北女角太多了！ 第四卷</dc:title>
+        <dc:creator opf:file-as="雨森たきび &amp; いみぎむる" opf:role="aut">雨森たきび</dc:creator>
+        <dc:creator opf:file-as="雨森たきび &amp; いみぎむる" opf:role="aut">いみぎむる</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (8.6.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>月之木学姐的真人题材 BL 本，被学生会没收了！
+天爱星同学气势汹汹，声称要召开教职员会议，这样下去文艺社即将遭遇危机。就在这时，志喜屋学姐对我们伸出援手──？
+「要不要…… 攻陷…… 天爱星？」「啥！？」手段先不提，看来只能由我这个新社长去夺回了。虽然八奈见特别叮咛我不准偷跑，志喜屋学姐好像也另有其他目的──
+渐入佳境的超人气确定败北恋爱喜剧，第 4 弹！</dc:description>
+        <dc:publisher>小学馆</dc:publisher>
+        <dc:language>zh</dc:language>
+        <dc:subject>校园</dc:subject>
+        <dc:subject>欢乐向</dc:subject>
+        <dc:subject>青春</dc:subject>
+        <dc:subject>恋爱</dc:subject>
+        <dc:subject>后宫</dc:subject>
+        <dc:subject>妹妹</dc:subject>
+    </metadata>
+    <guide>
+        <reference type="cover" title="封面" href="cover.jpg"/>
+    </guide>
+</package>

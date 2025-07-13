@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">99e57a59-a0c9-4c93-a78d-ec538cd8b973</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">99e57a59-a0c9-4c93-a78d-ec538cd8b973</dc:identifier>
+        <dc:title>败北女角太多了！ 第七卷</dc:title>
+        <dc:creator opf:file-as="雨森たきび &amp; いみぎむる" opf:role="aut">雨森たきび</dc:creator>
+        <dc:creator opf:file-as="雨森たきび &amp; いみぎむる" opf:role="aut">いみぎむる</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (8.6.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>「…… 部长真成熟呀。」
+
+石路高中一年级新生，白玉莉子。
+经小拔老师介绍，这位可爱又带点小心机的学妹加入了文艺部。
+其实，我们都完完全全被她楚楚可怜的外表蒙骗了。
+原以为她是来拯救废社危机的天使，不料她竟是曾经闯出大祸目前仍在停学的超级问题学生……
+文艺部被迫陷入婚礼潜入行动──『白玉莉子复仇大作战』的泥潭之中，众人今后将何去何从！？
+
+盛产败犬女主恋爱喜剧，学妹引起轩然大波的第七集开幕！</dc:description>
+        <dc:publisher>小学馆</dc:publisher>
+        <dc:language>zh</dc:language>
+        <dc:subject>校园</dc:subject>
+        <dc:subject>欢乐向</dc:subject>
+        <dc:subject>青春</dc:subject>
+        <dc:subject>恋爱</dc:subject>
+        <dc:subject>后宫</dc:subject>
+        <dc:subject>妹妹</dc:subject>
+    </metadata>
+    <guide>
+        <reference type="cover" title="封面" href="cover.jpg"/>
+    </guide>
+</package>

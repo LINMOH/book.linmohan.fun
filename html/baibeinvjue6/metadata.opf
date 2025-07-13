@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">7d55e2ab-b2e5-4b86-ab73-95d7301a6e54</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7d55e2ab-b2e5-4b86-ab73-95d7301a6e54</dc:identifier>
+        <dc:title>败北女角太多了！ 第六卷</dc:title>
+        <dc:creator opf:file-as="雨森たきび &amp; いみぎむる" opf:role="aut">雨森たきび</dc:creator>
+        <dc:creator opf:file-as="雨森たきび &amp; いみぎむる" opf:role="aut">いみぎむる</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (8.6.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>春天，学长姐们毕业在即。烧盐悄悄对我耳语：「阿温，和我去约会吧？」…… 没想到自己的高中生活居然会发生这种事件。竹岛水族馆的初次约会、与麻烦女生们的攻防。然而，这时候的我还不晓得──烧盐抱持的烦恼、心中的动摇。最意外的是，我竟要「赌上退出社团」和烧盐比赛百米短跑──
+超人气确定败北恋爱喜剧第 6 弹──小麦色少女所掀起的，春日风暴。</dc:description>
+        <dc:publisher>小学馆</dc:publisher>
+        <dc:language>zh</dc:language>
+        <dc:subject>校园</dc:subject>
+        <dc:subject>欢乐向</dc:subject>
+        <dc:subject>青春</dc:subject>
+        <dc:subject>恋爱</dc:subject>
+        <dc:subject>后宫</dc:subject>
+        <dc:subject>妹妹</dc:subject>
+    </metadata>
+    <guide>
+        <reference type="cover" title="封面" href="cover.jpg"/>
+    </guide>
+</package>

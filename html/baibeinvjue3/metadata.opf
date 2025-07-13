@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">08299fe4-5c48-40cd-baea-77a32962fb2d</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">08299fe4-5c48-40cd-baea-77a32962fb2d</dc:identifier>
+        <dc:title>败北女角太多了！ 第三卷</dc:title>
+        <dc:creator opf:file-as="雨森たきび &amp; いみぎむる" opf:role="aut">雨森たきび</dc:creator>
+        <dc:creator opf:file-as="雨森たきび &amp; いみぎむる" opf:role="aut">いみぎむる</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (8.6.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>十月，我们一年级生首次的园游会──石蕗祭已近。
+结束后三年级生就会退出，由剩下的我们继承社团。文艺社的展览和社刊，再加上班级的活动让我们忙于准备时，被指名为下届社长的小鞠似乎不太对劲……？甚至连学生会成员和姬宫华恋都缠上我，原本只是个背景路人的我，这下高中生活会变成什么样子啊──啊，八奈见今天也很有精神。胃口还是很好。真让人莫名安心。
+超人气确定败北恋爱喜剧，第 3 集──那是一封，感谢与道别的情书。</dc:description>
+        <dc:publisher>小学馆</dc:publisher>
+        <dc:language>zh</dc:language>
+        <dc:subject>校园</dc:subject>
+        <dc:subject>欢乐向</dc:subject>
+        <dc:subject>青春</dc:subject>
+        <dc:subject>恋爱</dc:subject>
+        <dc:subject>后宫</dc:subject>
+        <dc:subject>妹妹</dc:subject>
+    </metadata>
+    <guide>
+        <reference type="cover" title="封面" href="cover.jpg"/>
+    </guide>
+</package>

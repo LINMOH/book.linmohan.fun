@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">7088250b-804f-4039-a903-3c909403bca3</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7088250b-804f-4039-a903-3c909403bca3</dc:identifier>
+        <dc:title>败北女角太多了！ 第五卷</dc:title>
+        <dc:creator opf:file-as="雨森たきび &amp; いみぎむる" opf:role="aut">雨森たきび</dc:creator>
+        <dc:creator opf:file-as="雨森たきび &amp; いみぎむる" opf:role="aut">いみぎむる</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (8.6.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>情人节即将到来。佳树要赠送手工巧克力的对象──竟然不是哥哥！？怎么会这样，还以为佳树一定…… 我为此心慌意乱，但文艺社成员个个冷漠以对。「你妹妹有喜欢的人了吧。」「一、一定是有男人了。」…… 这几个家伙，根本不明白事情多么严重。佳树才国二而已。本命巧克力什么的还太早了。采用烧盐的提议，我要潜入桃园国中调查──咦？我要变装成国中生吗？万一被佳树发现的话…… 呃，她大概会很高兴吧…… 超人气确定败北恋爱喜剧第 5 弹。兄控妹 × 妹控兄的明日究竟何在！？</dc:description>
+        <dc:publisher>小学馆</dc:publisher>
+        <dc:language>zh</dc:language>
+        <dc:subject>校园</dc:subject>
+        <dc:subject>欢乐向</dc:subject>
+        <dc:subject>青春</dc:subject>
+        <dc:subject>恋爱</dc:subject>
+        <dc:subject>后宫</dc:subject>
+        <dc:subject>妹妹</dc:subject>
+    </metadata>
+    <guide>
+        <reference type="cover" title="封面" href="cover.jpg"/>
+    </guide>
+</package>
