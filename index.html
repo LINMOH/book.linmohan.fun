@@ -4,18 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>📚电子书库</title>
+  <meta name="description" content="优质电子书库，提供计算机科学、数学、编程等领域的电子书资源" />
+  <link rel="preconnect" href="https://chinese-fonts-cdn.deno.dev" />
   <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/syst/dist/SourceHanSerifCN/result.css" />
   <style>
     :root {
       --bg: #0b131d;
+      --bg-card: #1c1c1c;
+      --bg-card-hover: #2a2a2a;
       --text-color: #e8e6e3;
-      --link-color: gray;
+      --text-muted: #a0a0a0;
+      --link-color: #6b7280;
+      --accent: #3b82f6;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --border-radius: 12px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
       padding: 2rem 1rem;
-      background-color: var(--bg);
+      background: linear-gradient(135deg, var(--bg) 0%, #0f1419 100%);
       color: var(--text-color);
       font-family: 'Source Han Serif CN', serif, 'Arial', sans-serif;
       font-size: 1.1rem;
@@ -26,41 +40,139 @@
     }
 
     .container {
-      max-width: 960px;
+      max-width: 1200px;
       width: 100%;
-      animation: fadeIn 1.5s ease forwards;
+      animation: fadeInUp 1s ease-out forwards;
       opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin: 0 0 1rem 0;
+      background: linear-gradient(135deg, var(--accent), #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+
+    .header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--accent);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .search-container {
+      max-width: 500px;
+      margin: 0 auto 3rem auto;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      border: 2px solid transparent;
+      border-radius: var(--border-radius);
+      background: var(--bg-card);
+      color: var(--text-color);
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .search-input::placeholder {
+      color: var(--text-muted);
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
 
     .book-item {
-      background-color: #1c1c1c;
-      border-radius: 8px;
-      padding: 1rem;
+      background: var(--bg-card);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
       text-align: center;
       color: var(--text-color);
       text-decoration: none;
-      transition: transform 0.3s ease, background-color 0.3s ease;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
     }
 
-    Book-item:hover {
-      transform: translateY(-6px);
-      background-color: #2a2a2a;
+    .book-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), #8b5cf6);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .book-item:hover {
+      transform: translateY(-8px);
+      background: var(--bg-card-hover);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .book-item:hover::before {
+      opacity: 1;
     }
 
     .book-cover {
       width: 100%;
       height: 200px;
       object-fit: cover;
-      border-radius: 4px;
-      background: #444;
+      border-radius: calc(var(--border-radius) - 4px);
+      background: linear-gradient(45deg, #374151, #4b5563);
       margin-bottom: 1rem;
+      transition: var(--transition);
+    }
+
+    .book-item:hover .book-cover {
+      transform: scale(1.05);
     }
 
     .book-title {
@@ -70,34 +182,91 @@
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .book-category {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: rgba(59, 130, 246, 0.1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .no-results {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin: 3rem 0;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .footer-link {
       color: var(--link-color);
-      text-align: center;
-      margin-top: 2rem;
-      display: block;
-      text-decoration: underline;
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 0.95rem;
     }
 
-    @keyframes fadeIn {
+    .footer-link:hover {
+      color: var(--accent);
+    }
+
+    .loading-skeleton {
+      background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+
+    @keyframes fadeInUp {
       from {
         opacity: 0;
-        filter: blur(4px);
+        transform: translateY(20px);
       }
       to {
         opacity: 1;
-        filter: blur(0);
+        transform: translateY(0);
       }
     }
 
-    @media (max-width: 480px) {
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    @media (max-width: 768px) {
       body {
         padding: 1rem;
       }
 
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .stats {
+        gap: 1rem;
+      }
+
       .grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 1rem;
+      }
+
+      .book-item {
+        padding: 1rem;
       }
 
       .book-cover {
@@ -105,16 +274,57 @@
       }
 
       .book-title {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .search-container {
+        margin-bottom: 2rem;
+      }
+      
+      .search-input {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1 style="text-align: center;">电子书库</h1>
+    <header class="header">
+      <h1>📚 电子书库</h1>
+      <p>精选优质电子书资源，助力学习成长</p>
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-number" id="bookCount">-</span>
+          <span class="stat-label">本书籍</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">5</span>
+          <span class="stat-label">个分类</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="search-container">
+      <input 
+        type="text" 
+        id="searchInput" 
+        class="search-input" 
+        placeholder="搜索书籍标题..." 
+        autocomplete="off"
+      />
+    </div>
+
     <div class="grid" id="bookContainer"></div>
-    <a href="https://example.com" class="footer-link">科学上网速度更快</a>
+    <div class="no-results" id="noResults" style="display: none;">
+      未找到匹配的书籍
+    </div>
+
+    <footer class="footer">
+      <a href="https://example.com" class="footer-link">科学上网速度更快</a>
+    </footer>
   </div>
 
   <script>
@@ -123,119 +333,197 @@
         id: 1,
         title: "线性代数应该这样学",
         cover: "https://s1.imagehub.cc/images/2025/04/03/545e36d16a7aee2305dd4a665492f6d2.jpg",
-        pdf: "pdf/线性代数应该这样学.pdf"
+        pdf: "pdf/线性代数应该这样学.pdf",
+        category: "数学"
       },
       {
         id: 2,
         title: "普林斯顿微积分读本",
         cover: "https://s1.imagehub.cc/images/2025/03/31/8732dd3674750f1a7a5ede4e54ace298.md.jpg",
-        pdf: "pdf/普林斯顿微积分读本.pdf"
+        pdf: "pdf/普林斯顿微积分读本.pdf",
+        category: "数学"
       },
       {
         id: 3,
         title: "vim快捷键 #1",
         cover: "https://s1.imagehub.cc/images/2025/04/05/be397a4f7d5a05b7365ca226bb6a0564.th.png",
-        pdf: "https://s1.imagehub.cc/images/2025/04/05/be397a4f7d5a05b7365ca226bb6a0564.png"
+        pdf: "https://s1.imagehub.cc/images/2025/04/05/be397a4f7d5a05b7365ca226bb6a0564.png",
+        category: "工具"
       },
       {
         id: 4,
         title: "vim快捷键 #2",
         cover: "https://s1.imagehub.cc/images/2025/04/05/119af76792546560a3f087e63de6a1b8.th.png",
-        pdf: "https://s1.imagehub.cc/images/2025/04/05/119af76792546560a3f087e63de6a1b8.png"
+        pdf: "https://s1.imagehub.cc/images/2025/04/05/119af76792546560a3f087e63de6a1b8.png",
+        category: "工具"
       },
       {
         id: 5,
         title: "vim快捷键 文字版",
         cover: "https://s1.imagehub.cc/images/2025/04/05/f69dfe944697a22c98120565bf531655.th.png",
-        pdf: "pdf/vim.pdf"
+        pdf: "pdf/vim.pdf",
+        category: "工具"
       },
       {
         id: 6,
-        title: "VS Code快捷键(windows)",
+        title: "VS Code快捷键(Windows)",
         cover: "https://s1.imagehub.cc/images/2025/04/05/bc7d34bd1922c65af7edc220401b9314.th.png",
-        pdf: "pdf/vscode-windows.pdf"
+        pdf: "pdf/vscode-windows.pdf",
+        category: "工具"
       },
       {
         id: 7,
-        title: "VS Code快捷键(linux)",
+        title: "VS Code快捷键(Linux)",
         cover: "https://s1.imagehub.cc/images/2025/04/05/f5ab991a8f5bffcff511ff067e312e3e.th.png",
-        pdf: "pdf/vscode-linux.pdf"
+        pdf: "pdf/vscode-linux.pdf",
+        category: "工具"
       },
       {
         id: 8,
         title: "算法竞赛入门经典",
         cover: "https://s1.imagehub.cc/images/2025/04/05/e33ee5e5d5fbba77ee3d52c4f0b06df4.th.jpg",
-        pdf: "pdf/算法竞赛入门经典.pdf"
+        pdf: "pdf/算法竞赛入门经典.pdf",
+        category: "算法"
       },
       {
         id: 9,
         title: "具体数学：计算机科学基础（第二版）",
         cover: "https://pic1.imgdb.cn/item/68737d1a58cb8da5c8a7abbe.png",
-        pdf: "pdf/具体数学：计算机科学基础.第2版.pdf"
+        pdf: "pdf/具体数学：计算机科学基础.第2版.pdf",
+        category: "数学"
       },
       {
         id: 10,
         title: "Go程序设计语言",
         cover: "https://pic1.imgdb.cn/item/68737d7e58cb8da5c8a7abfa.png",
-        pdf: "pdf/go程序设计语言.pdf"
+        pdf: "pdf/go程序设计语言.pdf",
+        category: "编程"
       },
       {
         id: 11,
         title: "TCP/IP详解 卷1：协议",
         cover: "https://pic1.imgdb.cn/item/68737e2b58cb8da5c8a7ac70.png",
-        pdf: "pdf/TCP_IP详解卷1：协议.pdf"
+        pdf: "pdf/TCP_IP详解卷1：协议.pdf",
+        category: "网络"
       },
       {
         id: 12,
         title: "TCP/IP详解 卷2：实现",
         cover: "https://pic1.imgdb.cn/item/68737e7258cb8da5c8a7ac9b.png",
-        pdf: "pdf/TCP_IP详解卷2：实现.pdf"
+        pdf: "pdf/TCP_IP详解卷2：实现.pdf",
+        category: "网络"
       },
       {
         id: 13,
         title: "TCP/IP详解 卷3：TCP事务协议，HTTP，NNTP和UNIX域协议",
         cover: "https://pic1.imgdb.cn/item/68737f0658cb8da5c8a7ad03.png",
-        pdf: "pdf/TCP_IP详解卷3：TCP事务协议，HTTP，NNTP和UNIX域协议.pdf"
+        pdf: "pdf/TCP_IP详解卷3：TCP事务协议，HTTP，NNTP和UNIX域协议.pdf",
+        category: "网络"
       },
       {
         id: 14,
         title: "算法导论",
         cover: "https://pic1.imgdb.cn/item/6873813e58cb8da5c8a7ae7e.png",
-        pdf: "pdf/算法导论.pdf"
+        pdf: "pdf/算法导论.pdf",
+        category: "算法"
       },
       {
         id: 15,
         title: "算法（第4版）",
         cover: "https://pic1.imgdb.cn/item/687381fe58cb8da5c8a7aed8.png",
-        pdf: "pdf/算法.第4版.pdf"
+        pdf: "pdf/算法.第4版.pdf",
+        category: "算法"
       }
     ];
 
-    function renderBooks() {
+    let filteredBooks = books;
+
+    function createBookElement(book) {
+      return `
+        <a href="${book.pdf}" class="book-item" target="_blank" rel="noopener noreferrer" aria-label="下载 ${book.title} PDF">
+          <img src="${book.cover}" alt="${book.title} 封面" class="book-cover" 
+               onerror="this.src='data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 150 200\"><rect width=\"150\" height=\"200\" fill=\"%23374151\"/><text x=\"50%\" y=\"50%\" text-anchor=\"middle\" fill=\"%23fff\" font-size=\"12\">封面未找到</text></svg>'" 
+               loading="lazy" />
+          <div class="book-title">${book.title}</div>
+          <div class="book-category">${book.category}</div>
+        </a>
+      `;
+    }
+
+    function renderBooks(booksToRender = books) {
       const container = document.getElementById('bookContainer');
+      const noResults = document.getElementById('noResults');
+      
       if (!container) {
         console.error('Book container not found');
         return;
       }
-      if (!Array.isArray(books) || books.length === 0) {
-        console.error('No books data available');
-        container.innerHTML = '<p>暂无书籍</p>';
+
+      if (!Array.isArray(booksToRender) || booksToRender.length === 0) {
+        container.innerHTML = '';
+        noResults.style.display = 'block';
         return;
       }
-      container.innerHTML = books
-        .map(
-          (book) => `
-        <a href="${book.pdf}" class="book-item" target="_blank" aria-label="下载 ${book.title} PDF">
-          <img src="${book.cover}" alt="${book.title} 封面" class="book-cover" 
-               onerror="this.src='https://via.placeholder.com/150x200?text=Cover+Not+Found'" />
-          <div class="book-title">${book.title}</div>
-        </a>
-      `
-        )
-        .join('');
+
+      noResults.style.display = 'none';
+      container.innerHTML = booksToRender.map(createBookElement).join('');
     }
 
-    window.addEventListener('DOMContentLoaded', renderBooks);
+    function searchBooks(query) {
+      const searchTerm = query.toLowerCase().trim();
+      
+      if (!searchTerm) {
+        filteredBooks = books;
+      } else {
+        filteredBooks = books.filter(book => 
+          book.title.toLowerCase().includes(searchTerm) ||
+          book.category.toLowerCase().includes(searchTerm)
+        );
+      }
+      
+      renderBooks(filteredBooks);
+    }
+
+    function updateBookCount() {
+      const bookCountElement = document.getElementById('bookCount');
+      if (bookCountElement) {
+        bookCountElement.textContent = books.length;
+      }
+    }
+
+    function initializeSearch() {
+      const searchInput = document.getElementById('searchInput');
+      if (!searchInput) return;
+
+      let searchTimeout;
+      
+      searchInput.addEventListener('input', (e) => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          searchBooks(e.target.value);
+        }, 300);
+      });
+
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          searchInput.value = '';
+          searchBooks('');
+        }
+      });
+    }
+
+    function initialize() {
+      try {
+        updateBookCount();
+        renderBooks();
+        initializeSearch();
+      } catch (error) {
+        console.error('Initialization error:', error);
+      }
+    }
+
+    // 使用现代事件监听器
+    document.addEventListener('DOMContentLoaded', initialize);
   </script>
 </body>
 </html>
