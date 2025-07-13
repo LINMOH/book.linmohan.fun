@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">68cfcb75-9f45-4b13-87ab-2324d8ee9052</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">68cfcb75-9f45-4b13-87ab-2324d8ee9052</dc:identifier>
+        <dc:title>败北女角太多了！ 第一卷</dc:title>
+        <dc:creator opf:file-as="雨森たきび &amp; いみぎむる" opf:role="aut">雨森たきび</dc:creator>
+        <dc:creator opf:file-as="雨森たきび &amp; いみぎむる" opf:role="aut">いみぎむる</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (8.6.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>平常担任班上背景人物的我──温水和彦，偶然目击人气女同学八奈见杏菜被男生甩掉的失恋现场。
+「他明明说过要娶我当新娘，这不过分吗？」
+「那是多久前的事了？」
+「大概四、五岁吧。」
+那不算数吧？
+以此为契机，田径队的烧盐柠檬、文艺社的小鞠知花等洋溢着败北感的女生接连登场──？
+「温水，女生可以分成两大类。如果不是青梅竹马，就是狐狸精。」
+「原来如此，真豪爽的分类法。」
+…… 但愿这些因为败北而闪耀的少女们都能幸福。被败北女角──败女所环绕的谜样青春，在此揭幕！</dc:description>
+        <dc:publisher>小学馆</dc:publisher>
+        <dc:language>zh</dc:language>
+        <dc:subject>校园</dc:subject>
+        <dc:subject>欢乐向</dc:subject>
+        <dc:subject>青春</dc:subject>
+        <dc:subject>恋爱</dc:subject>
+        <dc:subject>后宫</dc:subject>
+        <dc:subject>妹妹</dc:subject>
+    </metadata>
+    <guide>
+        <reference type="cover" title="封面" href="cover.jpg"/>
+    </guide>
+</package>
