@@ -309,43 +309,282 @@ body {
     }
 }
 
-/* 小屏幕优化 (768px以下) */
-@media screen and (max-width: 767px) {
+/* 手机屏幕优化 (480px以下) */
+@media screen and (max-width: 480px) {
     :root {
         --content-max-width: 100%;
-        --content-padding: 20px;
+        --content-padding: 16px;
+        --border-radius: 6px;
+    }
+    
+    body {
+        font-size: 16px; /* 防止iOS自动缩放 */
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
     }
     
     .calibre {
-        font-size: 0.95em;
+        font-size: 1em;
+        line-height: 1.6;
+        padding: 16px;
     }
     
     .calibre3 {
-        font-size: 1.8em;
-        margin: 1.5em 0 1em 0;
+        font-size: 1.6em;
+        margin: 1.2em 0 0.8em 0;
+        line-height: 1.2;
+        letter-spacing: 0.3px;
     }
     
     .calibre5 {
-        text-indent: 1.5em;
+        text-indent: 1.2em;
         font-size: 1em;
+        line-height: 1.6;
+        margin: 1.2em 0;
     }
     
     .entry {
-        padding: 1em 1.5em;
-        margin: 1.5em 0;
+        padding: 1em 1.2em;
+        margin: 1.2em 0;
+        font-size: 0.95em;
     }
     
     .credits {
-        font-size: 1.4em;
-        padding: 1.5em 1.5em;
+        font-size: 1.2em;
+        padding: 1.2em 1em;
+        margin: 2em 0;
+    }
+    
+    .credits1 {
+        font-size: 1em;
+        padding: 0.8em 1em;
     }
     
     .cover {
-        padding: 2em 1em;
+        padding: 1.5em 1em;
+        margin-bottom: 2em;
+    }
+    
+    .calibre9 {
+        padding-left: 1.5em;
+        margin: 1.5em 0;
+    }
+    
+    .calibre10 {
+        margin: 0.8em 0;
+        padding-left: 0.3em;
+    }
+    
+    .illust {
+        margin: 2em 0;
+    }
+    
+    .illust1 {
+        margin: 1.5em 0;
+    }
+    
+    .scenebreak {
+        margin: 2em 0;
+        padding: 1.5em 0;
+        font-size: 1.1em;
+    }
+    
+    .scenebreak::before,
+    .scenebreak::after {
+        font-size: 0.8em;
+        letter-spacing: 0.6em;
+    }
+    
+    .calibre4 {
+        width: 90%;
+        margin: 1.5em auto;
+    }
+    
+    /* 触摸友好的按钮和链接 */
+    .entry {
+        min-height: 44px; /* iOS建议的最小触摸目标 */
+        -webkit-tap-highlight-color: rgba(52, 152, 219, 0.2);
+    }
+    
+    /* 防止横向滚动 */
+    .calibre,
+    .calibre8 {
+        overflow-x: hidden;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    /* 图片优化 */
+    .calibre1 {
+        max-width: 100%;
+        height: auto;
+        margin: 1em 0;
     }
 }
 
-/* 深色模式支持 */
+/* 平板屏幕优化 (481px - 767px) */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    :root {
+        --content-max-width: 100%;
+        --content-padding: 24px;
+    }
+    
+    .calibre {
+        font-size: 1.05em;
+        padding: 24px;
+    }
+    
+    .calibre3 {
+        font-size: 1.9em;
+        margin: 1.8em 0 1.2em 0;
+    }
+    
+    .calibre5 {
+        text-indent: 1.8em;
+        font-size: 1.05em;
+        line-height: 1.65;
+        margin: 1.4em 0;
+    }
+    
+    .entry {
+        padding: 1.3em 1.8em;
+        margin: 1.8em 0;
+    }
+    
+    .credits {
+        font-size: 1.5em;
+        padding: 1.8em 1.5em;
+    }
+    
+    .cover {
+        padding: 2.5em 1.5em;
+    }
+    
+    .calibre9 {
+        padding-left: 2em;
+    }
+    
+    .illust {
+        margin: 2.5em 0;
+    }
+    
+    .scenebreak {
+        margin: 2.5em 0;
+        font-size: 1.2em;
+    }
+}
+
+/* 移动端专用样式 */
+@media screen and (max-width: 767px) {
+    /* 防止缩放和改善触摸体验 */
+    html {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        touch-action: manipulation;
+    }
+    
+    body {
+        font-size: 16px; /* 防止iOS自动缩放 */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+    }
+    
+    /* 优化长文本阅读体验 */
+    .calibre5 {
+        text-align: left; /* 移动端左对齐更易读 */
+        hyphens: auto;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* 改善触摸交互 */
+    .entry {
+        -webkit-tap-highlight-color: rgba(52, 152, 219, 0.3);
+        tap-highlight-color: rgba(52, 152, 219, 0.3);
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+    
+    .entry:active {
+        background-color: rgba(52, 152, 219, 0.05);
+    }
+    
+    /* 优化图片显示 */
+    .calibre1 {
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* 改善列表在移动端的显示 */
+    .calibre9 {
+        font-size: 0.95em;
+    }
+    
+    .calibre10 {
+        line-height: 1.5;
+    }
+    
+    /* 优化标题在移动端的显示 */
+    .calibre3 {
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    .calibre3::after {
+        width: 40px;
+        height: 2px;
+    }
+    
+    /* 移动端滚动条隐藏 */
+    ::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+    
+    /* 改善选择文本体验 */
+    ::selection {
+        background: rgba(52, 152, 219, 0.3);
+    }
+    
+    /* 优化场景分隔符 */
+    .scenebreak::before,
+    .scenebreak::after {
+        display: block;
+        margin: 0.5em 0;
+    }
+}
+
+/* 横屏手机优化 */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+    .calibre {
+        padding: 12px 20px;
+    }
+    
+    .calibre3 {
+        font-size: 1.4em;
+        margin: 1em 0 0.8em 0;
+    }
+    
+    .calibre5 {
+        margin: 1em 0;
+        line-height: 1.55;
+    }
+    
+    .entry {
+        padding: 0.8em 1.2em;
+        margin: 1.2em 0;
+    }
+    
+    .cover {
+        padding: 1.2em 1em;
+    }
+    
+    .scenebreak {
+        margin: 1.8em 0;
+        padding: 1.2em 0;
+    }
+}
 @media (prefers-color-scheme: dark) {
     :root {
         --primary-color: #ecf0f1;
