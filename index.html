@@ -17,7 +17,7 @@
       padding: 2rem 1rem;
       background-color: var(--bg);
       color: var(--text-color);
-      font-family: 'Source Han Serif CN', serif;
+      font-family: 'Source Han Serif CN', serif, 'Arial', sans-serif;
       font-size: 1.1rem;
       line-height: 1.6;
       min-height: 100vh;
@@ -34,7 +34,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
@@ -49,7 +49,7 @@
       transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
-    .book-item:hover {
+    Book-item:hover {
       transform: translateY(-6px);
       background-color: #2a2a2a;
     }
@@ -72,6 +72,14 @@
       -webkit-box-orient: vertical;
     }
 
+    .footer-link {
+      color: var(--link-color);
+      text-align: center;
+      margin-top: 2rem;
+      display: block;
+      text-decoration: underline;
+    }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -88,6 +96,10 @@
         padding: 1rem;
       }
 
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+
       .book-cover {
         height: 160px;
       }
@@ -100,115 +112,127 @@
 </head>
 <body>
   <div class="container">
-    <h1 style="text-align:center;">电子书库</h1>
+    <h1 style="text-align: center;">电子书库</h1>
     <div class="grid" id="bookContainer"></div>
+    <a href="https://example.com" class="footer-link">科学上网速度更快</a>
   </div>
-
-  <a>科学上网速度更快</a>
 
   <script>
     const books = [
       {
-        "id": 1,
-        "title": "线性代数应该这样学",
-        "cover": "https://s1.imagehub.cc/images/2025/04/03/545e36d16a7aee2305dd4a665492f6d2.jpg",
-        "pdf": "pdf/线性代数应该这样学.pdf"
+        id: 1,
+        title: "线性代数应该这样学",
+        cover: "https://s1.imagehub.cc/images/2025/04/03/545e36d16a7aee2305dd4a665492f6d2.jpg",
+        pdf: "pdf/线性代数应该这样学.pdf"
       },
       {
-        "id": 2,
-        "title": "普林斯顿微积分读本",
-        "cover": "https://s1.imagehub.cc/images/2025/03/31/8732dd3674750f1a7a5ede4e54ace298.md.jpg",
-        "pdf": "pdf/普林斯顿微积分读本.pdf"
+        id: 2,
+        title: "普林斯顿微积分读本",
+        cover: "https://s1.imagehub.cc/images/2025/03/31/8732dd3674750f1a7a5ede4e54ace298.md.jpg",
+        pdf: "pdf/普林斯顿微积分读本.pdf"
       },
       {
-        "id": 3,
-        "title": "vim快捷键 #1",
-        "cover": "https://s1.imagehub.cc/images/2025/04/05/be397a4f7d5a05b7365ca226bb6a0564.th.png",
-        "pdf": "https://s1.imagehub.cc/images/2025/04/05/be397a4f7d5a05b7365ca226bb6a0564.png"
+        id: 3,
+        title: "vim快捷键 #1",
+        cover: "https://s1.imagehub.cc/images/2025/04/05/be397a4f7d5a05b7365ca226bb6a0564.th.png",
+        pdf: "https://s1.imagehub.cc/images/2025/04/05/be397a4f7d5a05b7365ca226bb6a0564.png"
       },
       {
-        "id": 4,
-        "title": "vim快捷键 #2",
-        "cover": "https://s1.imagehub.cc/images/2025/04/05/119af76792546560a3f087e63de6a1b8.th.png",
-        "pdf": "https://s1.imagehub.cc/images/2025/04/05/119af76792546560a3f087e63de6a1b8.png"
+        id: 4,
+        title: "vim快捷键 #2",
+        cover: "https://s1.imagehub.cc/images/2025/04/05/119af76792546560a3f087e63de6a1b8.th.png",
+        pdf: "https://s1.imagehub.cc/images/2025/04/05/119af76792546560a3f087e63de6a1b8.png"
       },
       {
-        "id": 5,
-        "title": "vim快捷键 文字版",
-        "cover": "https://s1.imagehub.cc/images/2025/04/05/f69dfe944697a22c98120565bf531655.th.png",
-        "pdf": "pdf/vim.pdf"
+        id: 5,
+        title: "vim快捷键 文字版",
+        cover: "https://s1.imagehub.cc/images/2025/04/05/f69dfe944697a22c98120565bf531655.th.png",
+        pdf: "pdf/vim.pdf"
       },
       {
-        "id": 6,
-        "title": "VS Code快捷键(windows)",
-        "cover": "https://s1.imagehub.cc/images/2025/04/05/bc7d34bd1922c65af7edc220401b9314.th.png",
-        "pdf": "pdf/vscode-windows.pdf"
+        id: 6,
+        title: "VS Code快捷键(windows)",
+        cover: "https://s1.imagehub.cc/images/2025/04/05/bc7d34bd1922c65af7edc220401b9314.th.png",
+        pdf: "pdf/vscode-windows.pdf"
       },
       {
-        "id": 7,
-        "title": "VS Code快捷键(linux)",
-        "cover": "https://s1.imagehub.cc/images/2025/04/05/f5ab991a8f5bffcff511ff067e312e3e.th.png",
-        "pdf": "pdf/vscode-linux.pdf"
+        id: 7,
+        title: "VS Code快捷键(linux)",
+        cover: "https://s1.imagehub.cc/images/2025/04/05/f5ab991a8f5bffcff511ff067e312e3e.th.png",
+        pdf: "pdf/vscode-linux.pdf"
       },
       {
-        "id": 8,
-        "title": "算法竞赛入门经典",
-        "cover": "https://s1.imagehub.cc/images/2025/04/05/e33ee5e5d5fbba77ee3d52c4f0b06df4.th.jpg",
-        "pdf": "pdf/算法竞赛入门经典.pdf"
+        id: 8,
+        title: "算法竞赛入门经典",
+        cover: "https://s1.imagehub.cc/images/2025/04/05/e33ee5e5d5fbba77ee3d52c4f0b06df4.th.jpg",
+        pdf: "pdf/算法竞赛入门经典.pdf"
       },
       {
-        "id": 9,
-        "title": "具体数学：计算机科学基础（第二版）",
-        "cover": "https://pic1.imgdb.cn/item/68737d1a58cb8da5c8a7abbe.png",
-        "pdf": "pdf/具体数学：计算机科学基础.第2版.pdf"
+        id: 9,
+        title: "具体数学：计算机科学基础（第二版）",
+        cover: "https://pic1.imgdb.cn/item/68737d1a58cb8da5c8a7abbe.png",
+        pdf: "pdf/具体数学：计算机科学基础.第2版.pdf"
       },
       {
-        "id": 10,
-        "title": "Go程序设计语言",
-        "cover": "https://pic1.imgdb.cn/item/68737d7e58cb8da5c8a7abfa.png",
-        "pdf": "pdf/go程序设计语言.pdf"
+        id: 10,
+        title: "Go程序设计语言",
+        cover: "https://pic1.imgdb.cn/item/68737d7e58cb8da5c8a7abfa.png",
+        pdf: "pdf/go程序设计语言.pdf"
       },
       {
-        "id": 11,
-        "title": "TCP/IP详解 卷1：协议",
-        "cover": "https://pic1.imgdb.cn/item/68737e2b58cb8da5c8a7ac70.png",
-        "pdf": "pdf/TCP_IP详解卷1：协议.pdf"
+        id: 11,
+        title: "TCP/IP详解 卷1：协议",
+        cover: "https://pic1.imgdb.cn/item/68737e2b58cb8da5c8a7ac70.png",
+        pdf: "pdf/TCP_IP详解卷1：协议.pdf"
       },
       {
-        "id": 12,
-        "title": "TCP/IP详解 卷2：实现",
-        "cover": "https://pic1.imgdb.cn/item/68737e7258cb8da5c8a7ac9b.png",
-        "pdf": "pdf/TCP_IP详解卷2：实现.pdf"
+        id: 12,
+        title: "TCP/IP详解 卷2：实现",
+        cover: "https://pic1.imgdb.cn/item/68737e7258cb8da5c8a7ac9b.png",
+        pdf: "pdf/TCP_IP详解卷2：实现.pdf"
       },
       {
-        "id": 13,
-        "title": "TCP/IP详解 卷3：TCP事务协议，HTTP，NNTP和UNIX域协议",
-        "cover": "https://pic1.imgdb.cn/item/68737f0658cb8da5c8a7ad03.png",
-        "pdf": "pdf/TCP_IP详解卷3：TCP事务协议，HTTP，NNTP和UNIX域协议.pdf"
-      }
-      {
-        "id": 14,
-        "title": "算法导论",
-        "cover": "https://pic1.imgdb.cn/item/6873813e58cb8da5c8a7ae7e.png",
-        "pdf": "pdf/算法导论.pdf"
+        id: 13,
+        title: "TCP/IP详解 卷3：TCP事务协议，HTTP，NNTP和UNIX域协议",
+        cover: "https://pic1.imgdb.cn/item/68737f0658cb8da5c8a7ad03.png",
+        pdf: "pdf/TCP_IP详解卷3：TCP事务协议，HTTP，NNTP和UNIX域协议.pdf"
       },
       {
-        "id": 15,
-        "title": "算法（第4版）",
-        "cover": "https://pic1.imgdb.cn/item/687381fe58cb8da5c8a7aed8.png",
-        "pdf": "pdf/算法.第4版.pdf"
+        id: 14,
+        title: "算法导论",
+        cover: "https://pic1.imgdb.cn/item/6873813e58cb8da5c8a7ae7e.png",
+        pdf: "pdf/算法导论.pdf"
+      },
+      {
+        id: 15,
+        title: "算法（第4版）",
+        cover: "https://pic1.imgdb.cn/item/687381fe58cb8da5c8a7aed8.png",
+        pdf: "pdf/算法.第4版.pdf"
       }
     ];
 
     function renderBooks() {
       const container = document.getElementById('bookContainer');
-      container.innerHTML = books.map(book => `
-        <a href="${book.pdf}" class="book-item" target="_blank">
-          <img src="${book.cover}" alt="${book.title}" class="book-cover"
-               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCIgZmlsbD0iI0NDQyIgeG1sbnM9Imh0dHA6Ly93d3cudzMu...'" />
+      if (!container) {
+        console.error('Book container not found');
+        return;
+      }
+      if (!Array.isArray(books) || books.length === 0) {
+        console.error('No books data available');
+        container.innerHTML = '<p>暂无书籍</p>';
+        return;
+      }
+      container.innerHTML = books
+        .map(
+          (book) => `
+        <a href="${book.pdf}" class="book-item" target="_blank" aria-label="下载 ${book.title} PDF">
+          <img src="${book.cover}" alt="${book.title} 封面" class="book-cover" 
+               onerror="this.src='https://via.placeholder.com/150x200?text=Cover+Not+Found'" />
           <div class="book-title">${book.title}</div>
         </a>
-      `).join('');
+      `
+        )
+        .join('');
     }
 
     window.addEventListener('DOMContentLoaded', renderBooks);
