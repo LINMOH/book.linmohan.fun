@@ -439,11 +439,22 @@
     let filteredBooks = books;
 
     function createBookElement(book) {
+      const fallbackSVG = encodeURIComponent(`
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 200">
+          <rect width="150" height="200" fill="#374151"/>
+          <text x="50%" y="50%" text-anchor="middle" fill="#fff" font-size="14" dy=".3em">封面未找到</text>
+        </svg>
+      `);
+    
       return `
         <a href="${book.pdf}" class="book-item" target="_blank" rel="noopener noreferrer" aria-label="下载 ${book.title} PDF">
-          <img src="${book.cover}" alt="${book.title} 封面" class="book-cover" 
-               onerror="this.src='data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 150 200\"><rect width=\"150\" height=\"200\" fill=\"%23374151\"/><text x=\"50%\" y=\"50%\" text-anchor=\"middle\" fill=\"%23fff\" font-size=\"12\">封面未找到</text></svg>'" 
-               loading="lazy" />
+          <img 
+            src="${book.cover}" 
+            alt="${book.title} 封面" 
+            class="book-cover"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='data:image/svg+xml,${fallbackSVG}'"
+          />
           <div class="book-title">${book.title}</div>
           <div class="book-category">${book.category}</div>
         </a>
