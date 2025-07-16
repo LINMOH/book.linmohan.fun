@@ -67,7 +67,7 @@
 
 ## 联系我
 
-- 邮箱：`linmohan#example.com`（请将 # 改为 @）
+- 邮箱：`linmhwork@outlook.com`
 
 欢迎建议与交流！
 
