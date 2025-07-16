@@ -26,46 +26,46 @@
 
 **数学**
 
-《线性代数应该这样学》
-《普林斯顿微积分读本》
-《具体数学：计算机科学基础（第二版）》
-《Discrete Mathematics and Its Applications》
+- 《线性代数应该这样学》
+- 《普林斯顿微积分读本》
+- 《具体数学：计算机科学基础（第二版）》
+- 《Discrete Mathematics and Its Applications》
 
 **编程**
 
-《Go程序设计语言》
-《JavaScript高级程序设计（第4版）》
+- 《Go程序设计语言》
+- 《JavaScript高级程序设计（第4版）》
 
 **算法**
 
-《算法竞赛入门经典》
-《算法导论》
-《算法（第4版）》
+- 《算法竞赛入门经典》
+- 《算法导论》
+- 《算法（第4版）》
 
 **网络**
 
-《TCP/IP详解 卷1：协议》
-《TCP/IP详解 卷2：实现》
-《TCP/IP详解 卷3：TCP事务协议，HTTP，NNTP和UNIX域协议》
+- 《TCP/IP详解 卷1：协议》
+- 《TCP/IP详解 卷2：实现》
+- 《TCP/IP详解 卷3：TCP事务协议，HTTP，NNTP和UNIX域协议》
 
 **工具**
 
-《vim快捷键 #1》
-《vim快捷键 #2》
-《vim快捷键 文字版》
-《VS Code快捷键 (Windows)》
-《VS Code快捷键 (Linux)》
-《中国国家高速公路网》
+- 《vim快捷键 #1》
+- 《vim快捷键 #2》
+- 《vim快捷键 文字版》
+- 《VS Code快捷键 (Windows)》
+- 《VS Code快捷键 (Linux)》
+- 《中国国家高速公路网》
 
 **系统**
 
-《Computer Systems: A Programmer’s Perspective》
-《计算机是怎样跑起来的》
+- 《Computer Systems: A Programmer’s Perspective》
+- 《计算机是怎样跑起来的》
 
 **轻小说**
 
-《败犬女主太多了！第一卷》至《第八卷》
-《败犬女主太多了！SSS》
+- 《败犬女主太多了！第一卷》至《第八卷》
+- 《败犬女主太多了！SSS》
 
 ## 技术实现
 
