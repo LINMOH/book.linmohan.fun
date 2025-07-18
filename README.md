@@ -33,34 +33,40 @@
 
 **编程**
 
-- 《Go程序设计语言》
-- 《JavaScript高级程序设计（第4版）》
+- 《Go 程序设计语言》
+- 《JavaScript 高级程序设计（第4版）》
+- 《HTML5 与 CSS3 基础教程（第8版）》
+- 《JavaScript 基础教程（第9版）》
+- 《Node.js 实战》
+- 《流畅的 Python》
 
 **算法**
 
 - 《算法竞赛入门经典》
 - 《算法导论》
 - 《算法（第4版）》
+- 《算法图解》
 
 **网络**
 
-- 《TCP/IP详解 卷1：协议》
-- 《TCP/IP详解 卷2：实现》
-- 《TCP/IP详解 卷3：TCP事务协议，HTTP，NNTP和UNIX域协议》
+- 《TCP/IP 详解 卷1：协议》
+- 《TCP/IP 详解 卷2：实现》
+- 《TCP/IP 详解 卷3：TCP 事务协议，HTTP，NNTP 和 UNIX 域协议》
 
 **工具**
 
-- 《vim快捷键 #1》
-- 《vim快捷键 #2》
-- 《vim快捷键 文字版》
-- 《VS Code快捷键 (Windows)》
-- 《VS Code快捷键 (Linux)》
+- 《vim 快捷键 #1》
+- 《vim 快捷键 #2》
+- 《vim 快捷键 文字版》
+- 《VS Code 快捷键 (Windows)》
+- 《VS Code 快捷键 (Linux)》
 - 《中国国家高速公路网》
 
 **系统**
 
 - 《Computer Systems: A Programmer’s Perspective》
 - 《计算机是怎样跑起来的》
+- 《Linux 命令行与 shell 脚本编程大全（第3版）》
 
 **轻小说**
 
