@@ -66,11 +66,15 @@
 
 - 《Computer Systems: A Programmer’s Perspective》
 - 《计算机是怎样跑起来的》
-- 《Linux 命令行与 shell 脚本编程大全（第3版）》
 
 **轻小说**
 
 - 《败犬女主太多了！第一卷》至《第八卷》和《SSS》
+
+**Linux**
+
+- 《Linux 命令行与 shell 脚本编程大全（第3版）》
+- 《Linux 就该这么学》
 
 **移除的书籍**
 
